@@ -18,10 +18,10 @@
             <ul class="navbar-nav navbar-right">
                 <!-- Authentication Links -->
                 <li class="nav-item">
-                    <a class="nav-link" href="#">登陆</a>
+                    <a class="nav-link" href="{{ route('login') }}">登陆</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">注册</a>
+                    <a class="nav-link" href="{{ route('register') }}">注册</a>
             </ul>
         </div>
     </div>
