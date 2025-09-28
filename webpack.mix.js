@@ -12,7 +12,11 @@ const mix = require('laravel-mix');
  */
 
 
-
+mix.webpackConfig({
+  stats: {
+    children: true,
+  },
+});
 
 const Mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/js')
