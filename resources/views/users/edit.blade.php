@@ -10,10 +10,21 @@
                 </h5>
             </div>
             <div class="card-body">
-                <form action="{{ route('users.update', $user->id) }}" method="POST" accept-charset="UTF-8">
+                <form action="{{ route('users.update', $user->id) }}" method="POST"
+                  accept-charset="UTF-8"
+                  enctype="multipart/form-data">
                    <input type="hidden" name="_method" value="PUT">
                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     @include('shared._error')
+
+                     <div class="mb-4">
+                      <label for="" class="avatar-label form-control">头像</label>
+                      <input type="file" name="avatar" class="form-control">
+                      @if($user->avatar)
+                        <br>
+                        <img class="img-thumbnail img-responsive" src="{{ $user->avatar }}" width="200" />
+                        @endif
+                    </div>
                     <div class="mb-3">
                         <label for="name-field" class="form-label">用户名</label>
                         <input class="form-control" name="name" type="text" id="name-field" value="{{ old('name', $user->name) }}"/>
@@ -22,10 +33,13 @@
                         <label for="email-field">邮箱</label>
                         <input class="form-control" name="email" type="text" id="email-field" value="{{ old('email', $user->email) }}">
                     </div>
-                    <div class="mb-3">
-                        <label for="introduction-field">个人简介</label>
-                        <textarea name="introduction" id="introduction-field" class="form-control" rows="3">{{ old('introduction', $user->introduction) }}</textarea>
+                    <div class="form-group">
+                        <label for="introduction-field">个人中心</label>
+                        <textarea name="introduction" id="introduction-field" class="form-control" rows="3">{{ old('introduction', $user->introduction) }}
+
+                        </textarea>
                     </div>
+
                     <div class="well well-sm">
                         <button type="submit" class="btn btn-primary">保存</button>
                     </div>
