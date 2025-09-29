@@ -38,10 +38,7 @@
                            role="button"
                            data-bs-toggle="dropdown"
                            aria-expanded="false">
-                            <img src="https://img2.woyaogexing.com/2025/04/21/b3d8a772ff7b255e3cb3cda9edbbe3d0.jpg"
-                                 class="img-fluid img-circle"
-                                 width="30"
-                                 height="30">
+                            <img src="{{ Auth::user()->avatar }}" class="img-responsive img-circle" width="30px" height="30px" alt="{{ Auth::user()->name }}">
                             {{ Auth::user()->name }}
                         </a >
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
