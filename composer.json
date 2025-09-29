@@ -7,14 +7,14 @@
     "require": {
         "php": "^8.0.2",
         "guzzlehttp/guzzle": "^7.2",
-        "laravel/framework": "^10.48.29",
+        "intervention/image": "^2.7",
+        "laravel/framework": "^9.2",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
-        "mews/captcha": "~3.0",
+        "laravel/ui": "^3.4.5",
+        "monolog/monolog": "^2.0.2",
         "overtrue/laravel-lang": "~6.0",
-        "laravel/ui": "^4.0",
-        "monolog/monolog": "^3.0",
-        "spatie/laravel-ignition":"^2.0"
+        "spatie/laravel-ignition": "^1.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
