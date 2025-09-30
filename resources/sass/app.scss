@@ -35,15 +35,17 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  padding-bottom: 60px; /* 值等于 footer 的高度 */
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  background-color:#000;
+    position: fixed; /* 固定定位，相对于浏览器窗口 */
+      left: 0;
+      bottom: 0; /* 紧贴底部 */
+      width: 100%; /* 宽度占满 */
+      height: 60px; /* 固定高度 */
+      background-color: #000; /* 背景色 */
+      z-index: 100; /* 避免被其他元素遮挡（按需调整） */
 
 .container {
     padding-right: 15px;

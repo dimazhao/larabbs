@@ -48,13 +48,13 @@
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{{ route('users.show', Auth::user()->id) }}">个人中心</a ></li>
                             <li><a class="dropdown-item" href="{{ route('users.edit', Auth::user()->id) }}">编辑资料</a ></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li>
-                                <form action="{{ route('logout') }}" method="POST">
-                                    @csrf
-                                    <button class="btn btn-block btn-danger w-100" type="submit">退出</button>
+                           <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" id="logout" href="#">
+                                <form action="{{ route('logout') }}" method="POST" onsubmit="return confirm('您确定要退出吗？');">
+                                  {{ csrf_field() }}
+                                  <button class="btn btn-block btn-danger" type="submit" name="button">退出</button>
                                 </form>
-                            </li>
+                              </a>
                         </ul>
                     </li>
                 @endguest
