@@ -3,12 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-
 class Reply extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['content'];
+    protected $fillable =['content', 'user_id', 'topic_id'];
+
 
     public function topic()
     {
