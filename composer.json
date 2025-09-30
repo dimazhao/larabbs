@@ -15,7 +15,8 @@
         "mews/captcha": "^3.3",
         "monolog/monolog": "^2.0.2",
         "overtrue/laravel-lang": "~6.0",
-        "spatie/laravel-ignition": "^1.0"
+        "spatie/laravel-ignition": "^1.0",
+        "summerblue/laravel-active": "9.*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "~3.6",
