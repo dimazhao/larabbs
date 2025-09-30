@@ -36,6 +36,14 @@
                         <a class="nav-link" href="{{ route('register') }}">注册</a >
                     </li>
                 @else
+                           <!-- Authentication Links -->
+
+
+                       <li class="nav-item">
+            <a class="nav-link mt-1 mr-3 font-weight-bold" href="{{ route('topics.create') }}">
+              <i class="fa-solid fa-plus"></i>➕
+            </a>
+          </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#"
                            id="navbarDropdown"
@@ -45,6 +53,7 @@
                             <img src="{{ Auth::user()->avatar }}" class="img-responsive img-circle" width="30px" height="30px" alt="{{ Auth::user()->name }}">
                             {{ Auth::user()->name }}
                         </a >
+
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{{ route('users.show', Auth::user()->id) }}">个人中心</a ></li>
                             <li><a class="dropdown-item" href="{{ route('users.edit', Auth::user()->id) }}">编辑资料</a ></li>
