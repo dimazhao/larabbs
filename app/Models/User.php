@@ -13,6 +13,7 @@ use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Support\Str;
 class User extends Authenticatable implements MustVerifyEmail
 {
+    use Traits\ActiveUserHelper;
     use HasRoles;
     use HasApiTokens, HasFactory, Notifiable, MustVerifyEmailTrait;
     use Notifiable {
