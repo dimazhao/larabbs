@@ -38,12 +38,13 @@
                 @else
                            <!-- Authentication Links -->
 
-
-                       <li class="nav-item">
-            <a class="nav-link mt-1 mr-3 font-weight-bold" href="{{ route('topics.create') }}">
-              <i class="fa-solid fa-plus"></i>➕
-            </a>
-          </li>
+                      <!-- 其他 meta 标签和链接 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+                        <li class="nav-item">
+              <a class="nav-link mt-1 mr-3 font-weight-bold" href="{{ route('topics.create') }}">
+                <i class="fa-solid fa-pencil"></i>
+              </a>
+            </li>
 
 
           <li class="nav-item notification-badge">
@@ -63,6 +64,13 @@
                         </a >
 
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                           @can('manage_contents')
+                          <a class="dropdown-item" href="{{ url(config('administrator.uri')) }}">
+                            <i class="fas fa-tachometer-alt mr-2"></i>
+                            管理后台
+                          </a>
+                          <div class="dropdown-divider"></div>
+                        @endcan
                             <li><a class="dropdown-item" href="{{ route('users.show', Auth::user()->id) }}">个人中心</a ></li>
                             <li><a class="dropdown-item" href="{{ route('users.edit', Auth::user()->id) }}">编辑资料</a ></li>
                            <div class="dropdown-divider"></div>

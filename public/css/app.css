@@ -12444,3 +12444,10 @@ body {
 .notification-badge .badge-hint {
   background-color: #d15b47 !important;
 }
+
+.fa-edit::before,
+.fa-pencil-square-o::before {
+  content: "\f067"; /* 替换为你想要的 Font Awesome 图标编码 */
+  color: red; /* 示例：修改图标颜色 */
+  font-size: 20px; /* 示例：修改图标大小 */
+}
