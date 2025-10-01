@@ -4,7 +4,7 @@ namespace App\Observers;
 
 use App\Models\Topic;
 use App\Jobs\TranslateSlug;
-
+use Illuminate\Support\Facades\DB;
 // creating, created, updating, updated, saving,
 // saved,  deleting, deleted, restoring, restored
 
@@ -19,12 +19,17 @@ class TopicObserver
         $topic->excerpt = make_excerpt($topic->body);
     }
 
- public function saved(Topic $topic)
-{
-    // 新增：确保模型已存在于数据库（避免事务回滚等极端场景）
-    if ($topic->exists && !$topic->slug)
+     public function saved(Topic $topic)
     {
-        dispatch(new TranslateSlug($topic->id));
+        // 新增：确保模型已存在于数据库（避免事务回滚等极端场景）
+        if ($topic->exists && !$topic->slug)
+        {
+            dispatch(new TranslateSlug($topic->id));
+        }
     }
-}
+
+    public function deleted(Topic $topic)
+    {
+        DB::table('replies')->where('topic_id', $topic->id)->delete();
+    }
 }
