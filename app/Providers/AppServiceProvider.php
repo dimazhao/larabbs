@@ -30,6 +30,8 @@ class AppServiceProvider extends ServiceProvider
 		\App\Models\Reply::observe(\App\Observers\ReplyObserver::class);
 		\App\Models\Topic::observe(\App\Observers\TopicObserver::class);
         \Illuminate\Pagination\Paginator::useBootstrap();
+        \App\Models\Link::observe(\App\Observers\LinkObserver::class);
+
         // 加载自定义配置文件
     $userConfig = require config_path('administrator/users.php');
     // 合并到框架配置中（键为 administrator.users）
